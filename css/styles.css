@@ -1,0 +1,193 @@
+/* Downloaded Roboto and added it locally as in instruction video. Tried to load regular and bold only for now. Can 
+add italic */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Setting box-sizing so padding doesn’t break layouts. For lectures and material most common and safe to avoid overextensions 
+with box model padding, borders and margins. Also clearing default margin/padding */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Set Roboto as base font. Added fallback in case it doesn’t load as instruction video. Color is a safe dark gray. 
+Background slightly off-white */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+/* Used a container to center content and keep max width. Picked 960px because it looked okay visually */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Gave the header a dark background to match the design. Not sure about the exact color but looks close enough */
+.header {
+    background-color: #1f2937;
+    padding-bottom: 30px;
+}
+
+/* Used flex here to spread out logo and nav. Grid not needed since only one row, not 2D with both rows and columns */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Just making the logo bold and white so it stands out on dark background */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Navigation links. Just added spacing between them. Used light gray so it’s visible on dark background */
+.nav a {
+    color: #e5e7eb;
+    margin-left: 16px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Trying to copy hero layout from design. Using flex to make image and text side-by-side */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* Limited text width so it doesn’t stretch too far */
+.hero-text {
+    max-width: 460px;
+}
+
+/* This is the main headline. Lowered the font size slightly to make it less perfect */
+.hero-text h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #f3f4f6;
+    margin-bottom: 12px;
+}
+
+/* Just some intro text under the heading. Lighter color and smaller size */
+.hero-text p {
+    color: #d1d5db;
+    margin-bottom: 18px;
+}
+
+/* CTA button. Tried blue like the mockup but maybe this shade is too bright */
+.hero-text button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Made image fixed size to match the mockup. Mb too small */
+.hero-image img {
+    width: 360px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Info section below hero. Just centered and added some padding */
+.info {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Used flex again to make the cards line up. Added a small gap so they don’t look too crammed */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Limiting the card size and keeping text small like in the screenshot */
+.card {
+    max-width: 160px;
+    font-size: 14px;
+}
+
+/* Border color picked randomly. Not sure if it matches exactly but it adds some structure */
+.card img {
+    width: 100%;
+    height: 120px;
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* Wanted this section to look like a quote/testimonial. Light gray background to separate it */
+.quote {
+    background-color: #e5e7eb;
+    padding: 50px 20px;
+    font-style: italic;
+}
+
+/* Just made the quote a bit bigger to emphasize it */
+.quote-text {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Aligned author name to the right. Not 100% sure if this is how it was in the mockup */
+.quote-author {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* CTA (call to action) box toward the end. Tried to keep it visually strong so user notices it */
+.cta-box {
+    background-color: #3b82f6;
+    color: white;
+    padding: 30px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* This button is white with blue text, opposite of the hero one. To create contrast */
+.cta-button {
+    background: white;
+    color: #3b82f6;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Simple footer. Dark like header, small text */
+.footer {
+    background-color: #1f2937;
+    color: #e5e7eb;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 13px;
+}
