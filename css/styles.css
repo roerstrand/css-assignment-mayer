@@ -1,6 +1,4 @@
-/* Downloaded Roboto and added it locally as in instruction video. Tried to load regular and bold only for now. Can 
-add italic */
-
+/* ===== FONT IMPORTS ===== */
 @font-face {
     font-family: 'Roboto';
     src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
@@ -15,179 +13,634 @@ add italic */
     font-style: normal;
 }
 
-/* Setting box-sizing so padding doesn’t break layouts. For lectures and material most common and safe to avoid overextensions 
-with box model padding, borders and margins. Also clearing default margin/padding */
+/* ===== CSS CUSTOM PROPERTIES ===== */
+:root {
+    --primary-dark: #1f2937;
+    --primary-blue: #3882f6;
+    --primary-blue-hover: #2563eb;
+    --light-gray: #e5e7eb;
+    --text-light: #f3f4f6;
+    --text-medium: #d1d5db;
+    --text-dark: #1f2937;
+    --background-light: #f9fafb;
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --gradient-blue: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
+    --gradient-dark: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+/* ===== RESET & BASE STYLES ===== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Set Roboto as base font. Added fallback in case it doesn’t load as instruction video. Color is a safe dark gray. 
-Background slightly off-white */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f9fafb;
-    color: #1f2937;
-    line-height: 1.5;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
 }
 
-/* Used a container to center content and keep max width. Picked 960px because it looked okay visually */
+/* ===== UTILITY CLASSES ===== */
 .container {
-    max-width: 960px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 2rem;
 }
 
-/* Gave the header a dark background to match the design. Not sure about the exact color but looks close enough */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* ===== HEADER STYLES ===== */
 .header {
-    background-color: #1f2937;
-    padding-bottom: 30px;
+    background: var(--gradient-dark);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
 }
 
-/* Used flex here to spread out logo and nav. Grid not needed since only one row, not 2D with both rows and columns */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(56, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
 .header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 10;
 }
 
-/* Just making the logo bold and white so it stands out on dark background */
 .logo {
-    font-size: 1, 25rem;
-    font-weight: bold;
-    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-/* Navigation links. Just added spacing between them. Used light gray so it’s visible on dark background */
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--gradient-blue);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
 .nav a {
-    color: #e5e7eb;
-    margin-left: 16px;
+    color: var(--light-gray);
     text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(56, 130, 246, 0.1);
+    border-radius: 8px;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+.nav a:hover::before {
+    transform: scaleY(1);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 4rem 0;
+    position: relative;
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+
+.hero-text {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text p {
+    color: var(--text-medium);
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+.hero-text strong {
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.hero-text button {
+    background: var(--gradient-blue);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-text button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-text button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.hero-text button:hover::before {
+    left: 100%;
+}
+
+.hero-image {
+    animation: slideInRight 0.8s ease-out;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    background: var(--gradient-blue);
+    border-radius: 20px;
+    z-index: 1;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.hero-image:hover::before {
+    transform: rotate(3deg);
+    opacity: 0.5;
+}
+
+.hero-image:hover img {
+    transform: translateY(-5px) rotate(-1deg);
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    background: linear-gradient(180deg, var(--background-light) 0%, #ffffff 100%);
+}
+
+/* ===== INFO SECTION ===== */
+.info {
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-blue);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.info h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(56, 130, 246, 0.1);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-blue);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(56, 130, 246, 0.3);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.card:hover img {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.card p {
+    color: var(--text-dark);
+    line-height: 1.6;
     font-size: 1rem;
 }
 
-/* Trying to copy hero layout from design. Using flex to make image and text side-by-side */
-.hero {
+.card emp {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* ===== QUOTE SECTION ===== */
+.quote {
+    background: linear-gradient(135deg, var(--light-gray) 0%, #f3f4f6 100%);
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.quote::before {
+    content: '"';
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 8rem;
+    color: rgba(56, 130, 246, 0.1);
+    font-family: serif;
+    line-height: 1;
+    z-index: 1;
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 0 2rem;
+}
+
+.quote-text {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    position: relative;
+}
+
+.quote-author {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    position: relative;
+}
+
+.quote-author::before {
+    content: '—';
+    margin-right: 0.5rem;
+}
+
+/* ===== CTA SECTION ===== */
+.cta {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #ffffff 0%, var(--background-light) 100%);
+}
+
+.cta-box {
+    background: var(--gradient-blue);
+    color: white;
+    padding: 3rem;
+    border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 40px;
-    flex-wrap: wrap;
+    gap: 2rem;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Limited text width so it doesn’t stretch too far */
-.hero-text {
-    max-width: 460px;
-}
-
-/* This is the main headline. Lowered the font size slightly to make it less perfect */
-.hero-text h1 {
-    font-size: 2.25rem;
-    font-weight: bold;
-    color: #f3f4f6;
-    margin-bottom: 12px;
-}
-
-/* Just some intro text under the heading. Lighter color and smaller size */
-.hero-text p {
-    color: #d1d5db;
-    margin-bottom: 18px;
-}
-
-/* CTA button. Tried blue like the mockup but maybe this shade is too bright */
-.hero-text button {
-    background-color: #3b82f6;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Made image fixed size to match the mockup. Mb too small */
-.hero-image img {
-    width: 360px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-/* Info section below hero. Just centered and added some padding */
-.info {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-/* Used flex again to make the cards line up. Added a small gap so they don’t look too crammed */
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* Limiting the card size and keeping text small like in the screenshot */
-.card {
-    max-width: 160px;
-    font-size: 0.875rem;
-}
-
-/* Border color picked randomly. Not sure if it matches exactly but it adds some structure */
-.card img {
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
     width: 100%;
-    height: 120px;
-    border: 2px solid #3b82f6;
-    border-radius: 8px;
-    margin-bottom: 8px;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
 }
 
-/* Wanted this section to look like a quote/testimonial. Light gray background to separate it */
-.quote {
-    background-color: #e5e7eb;
-    padding: 50px 20px;
-    font-style: italic;
+@media (max-width: 768px) {
+    .cta-box {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
-/* Just made the quote a bit bigger to emphasize it */
-.quote-text {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-/* Aligned author name to the right. Not 100% sure if this is how it was in the mockup */
-.quote-author {
-    text-align: right;
-    font-weight: bold;
-}
-
-/* CTA (call to action) box toward the end. Tried to keep it visually strong so user notices it */
-.cta-box {
-    background-color: #3b82f6;
+.cta-text h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1rem;
     color: white;
-    padding: 30px;
-    border-radius: 6px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 
-/* This button is white with blue text, opposite of the hero one. To create contrast */
+.cta-text p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
 .cta-button {
     background: white;
-    color: #3b82f6;
-    padding: 8px 16px;
+    color: var(--primary-blue);
+    padding: 1rem 2rem;
     border: none;
-    border-radius: 4px;
-    font-weight: bold;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
 }
 
-/* Simple footer. Dark like header, small text */
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+    background: #f8fafc;
+}
+
+/* ===== FOOTER ===== */
 .footer {
-    background-color: #1f2937;
-    color: #e5e7eb;
+    background: var(--gradient-dark);
+    color: var(--light-gray);
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.875rem;
+    padding: 3rem 0;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+}
+
+.footer p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+/* ===== ENHANCED RESPONSIVENESS ===== */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+    
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav {
+        gap: 1rem;
+    }
+    
+    .nav a {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== FOCUS STYLES ===== */
+button:focus,
+a:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-blue);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-blue-hover);
 }
