@@ -23,7 +23,7 @@ with box model padding, borders and margins. Also clearing default margin/paddin
     padding: 0;
 }
 
-/* I changed this because smooth scrolling improves user experience when clicking anchor links */
+/* changed this because smooth scrolling improves user experience when clicking anchor links  */
 html {
     scroll-behavior: smooth;
 }
@@ -31,22 +31,22 @@ html {
 /* Set Roboto as base font. Added fallback in case it doesn't load as instruction video. Color is a safe dark gray. 
 Background slightly off-white */
 body {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* I added system fonts as additional fallbacks for better compatibility */
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* added system fonts as additional fallbacks for better compatibility  */
     background-color: #f9fafb;
     color: #1f2937;
-    line-height: 1.6; /* I changed from 1.5 to 1.6 because it improves readability */
-    font-size: 1rem; /* I changed to rem instead of implicit px for better accessibility */
-    overflow-x: hidden; /* I added this to prevent horizontal scrolling issues on mobile */
+    line-height: 1.6; /* changed from 1.5 to 1.6 because it improves readability  */
+    font-size: 1rem; /* changed to rem instead of implicit px for better accessibility  */
+    overflow-x: hidden; /* added this to prevent horizontal scrolling issues on mobile  */
 }
 
 /* Used a container to center content and keep max width. Picked 960px because it looked okay visually */
 .container {
-    max-width: 75rem; /* I changed from 960px to 75rem (1200px) because it gives more breathing room on larger screens */
+    max-width: 75rem; /* changed from 960px to 75rem (1200px) because it gives more breathing room on larger screens  */
     margin: 0 auto;
-    padding: 0 2rem; /* I changed from 20px to 2rem for consistency and better mobile padding */
+    padding: 0 2rem; /* changed from 20px to 2rem for consistency and better mobile padding  */
 }
 
-/* I added this media query because smaller screens need less padding to maximize content space */
+/* added this media query because smaller screens need less padding to maximize content space  */
 @media (max-width: 48rem) {
     .container {
         padding: 0 1rem;
@@ -55,13 +55,13 @@ body {
 
 /* Gave the header a dark background to match the design. Not sure about the exact color but looks close enough */
 .header {
-    background: linear-gradient(135deg, #1f2937 0%, #111827 100%); /* I changed to gradient because it adds visual depth without changing the base color */
-    position: relative; /* I added this for positioning pseudo-elements */
-    overflow: hidden; /* I added this to contain the gradient overlay effect */
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05); /* I added shadow in rem for depth */
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%); /* changed to gradient because it adds visual depth without changing the base color  */
+    position: relative; /* added this for positioning pseudo-elements  */
+    overflow: hidden; /* added this to contain the gradient overlay effect  */
+    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05); /* added shadow in rem for depth  */
 }
 
-/* I added this because a subtle radial gradient overlay adds visual interest without changing the color scheme */
+/* added this because a subtle radial gradient overlay adds visual interest without changing the color scheme  */
 .header::before {
     content: '';
     position: absolute;
@@ -78,22 +78,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0; /* I changed from implicit to explicit padding in rem for consistency */
-    position: relative; /* I added this to ensure content appears above the gradient overlay */
+    padding: 1.5rem 0; /* changed from implicit to explicit padding in rem for consistency  */
+    position: relative; /* added this to ensure content appears above the gradient overlay  */
     z-index: 10;
 }
 
 /* Just making the logo bold and white so it stands out on dark background */
 .logo {
-    font-size: 2rem; /* I changed from 1,25rem to 2rem because the comma was a typo and larger size looks more prominent */
+    font-size: 2rem; /* changed from 1,25rem to 2rem because the comma was a typo and larger size looks more prominent  */
     font-weight: bold;
     color: white;
-    text-decoration: none; /* I added this in case the logo becomes a link later */
-    position: relative; /* I added this for the hover effect positioning */
-    transition: all 0.3s ease; /* I added smooth transitions for better user experience */
+    text-decoration: none; /* added this in case the logo becomes a link later  */
+    position: relative; /* added this for the hover effect positioning  */
+    transition: all 0.3s ease; /* added smooth transitions for better user experience  */
 }
 
-/* I added this hover effect because it provides visual feedback when users interact with the logo */
+/* added this hover effect because it provides visual feedback when users interact with the logo  */
 .logo::after {
     content: '';
     position: absolute;
@@ -110,7 +110,7 @@ body {
     width: 100%;
 }
 
-/* I added this wrapper because it provides better spacing control for navigation items */
+/* added this wrapper because it provides better spacing control for navigation items  */
 .nav {
     display: flex;
     gap: 2rem;
@@ -121,15 +121,15 @@ body {
 .nav a {
     color: #e5e7eb;
     text-decoration: none;
-    font-size: 1.1rem; /* I changed from 1rem to 1.1rem for better readability */
-    font-weight: 500; /* I added medium weight for better visual hierarchy */
-    position: relative; /* I added this for hover effect positioning */
-    transition: all 0.3s ease; /* I added smooth transitions for better interactions */
-    padding: 0.5rem 1rem; /* I added padding to increase click area */
-    border-radius: 0.5rem; /* I added border radius for modern button-like appearance */
+    font-size: 1.1rem; /* changed from 1rem to 1.1rem for better readability  */
+    font-weight: 500; /* added medium weight for better visual hierarchy  */
+    position: relative; /* added this for hover effect positioning  */
+    transition: all 0.3s ease; /* added smooth transitions for better interactions  */
+    padding: 0.5rem 1rem; /* added padding to increase click area  */
+    border-radius: 0.5rem; /* added border radius for modern button-like appearance  */
 }
 
-/* I added this pseudo-element because it creates a smooth background reveal effect on hover */
+/* added this pseudo-element because it creates a smooth background reveal effect on hover  */
 .nav a::before {
     content: '';
     position: absolute;
@@ -144,7 +144,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* I enhanced the hover state because it provides better visual feedback and modern interaction patterns */
+/* enhanced the hover state because it provides better visual feedback and modern interaction patterns  */
 .nav a:hover {
     color: #f3f4f6;
     transform: translateY(-0.125rem);
@@ -156,16 +156,16 @@ body {
 
 /* Trying to copy hero layout from design. Using flex to make image and text side-by-side */
 .hero {
-    display: grid; /* I changed from flex to grid because it provides better responsive control */
-    grid-template-columns: 1fr 1fr; /* I set equal columns for balanced layout */
-    gap: 4rem; /* I changed from margin to gap for cleaner spacing */
+    display: grid; /* changed from flex to grid because it provides better responsive control  */
+    grid-template-columns: 1fr 1fr; /* set equal columns for balanced layout  */
+    gap: 4rem; /* changed from margin to gap for cleaner spacing  */
     align-items: center;
-    padding: 4rem 0; /* I changed from margin-top to padding for better section spacing */
-    position: relative; /* I added this for layering context */
+    padding: 4rem 0; /* changed from margin-top to padding for better section spacing  */
+    position: relative; /* added this for layering context  */
     z-index: 5;
 }
 
-/* I added this media query because mobile screens need single column layout */
+/* added this media query because mobile screens need single column layout  */
 @media (max-width: 48rem) {
     .hero {
         grid-template-columns: 1fr;
@@ -176,17 +176,17 @@ body {
 
 /* Limited text width so it doesn't stretch too far */
 .hero-text {
-    animation: slideInLeft 0.8s ease-out; /* I added entrance animation for better visual appeal */
+    animation: slideInLeft 0.8s ease-out; /* added entrance animation for better visual appeal  */
 }
 
 /* This is the main headline. Lowered the font size slightly to make it less perfect */
 .hero-text h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem); /* I changed to clamp() because it provides responsive sizing between min and max values */
+    font-size: clamp(2.5rem, 5vw, 4rem); /* changed to clamp() because it provides responsive sizing between min and max values  */
     font-weight: bold;
     color: #f3f4f6;
-    margin-bottom: 1.5rem; /* I changed from 12px to 1.5rem for consistency */
-    line-height: 1.2; /* I added this for better text spacing */
-    background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%); /* I added gradient text effect for modern appeal */
+    margin-bottom: 1.5rem; /* changed from 12px to 1.5rem for consistency  */
+    line-height: 1.2; /* added this for better text spacing  */
+    background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%); /* added gradient text effect for modern appeal  */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -195,12 +195,12 @@ body {
 /* Just some intro text under the heading. Lighter color and smaller size */
 .hero-text p {
     color: #d1d5db;
-    margin-bottom: 2rem; /* I changed from 18px to 2rem for consistency */
-    font-size: 1.25rem; /* I added explicit size in rem for better scaling */
-    line-height: 1.8; /* I added this for better readability */
+    margin-bottom: 2rem; /* changed from 18px to 2rem for consistency  */
+    font-size: 1.25rem; /* added explicit size in rem for better scaling  */
+    line-height: 1.8; /* added this for better readability  */
 }
 
-/* I added this because the brand name should stand out with the blue color theme */
+/* added this because the brand name should stand out with the blue color theme  */
 .hero-text strong {
     background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
     -webkit-background-clip: text;
@@ -211,21 +211,21 @@ body {
 
 /* CTA button. Tried blue like the mockup but maybe this shade is too bright */
 .hero-text button {
-    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%); /* I changed to gradient because it adds depth while keeping the blue theme */
+    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%); /* changed to gradient because it adds depth while keeping the blue theme  */
     color: white;
     border: none;
-    padding: 1rem 2rem; /* I changed from 10px 20px to rem for consistency */
-    border-radius: 0.75rem; /* I changed from 4px to 0.75rem for more modern rounded corners */
+    padding: 1rem 2rem; /* changed from 10px 20px to rem for consistency  */
+    border-radius: 0.75rem; /* changed from 4px to 0.75rem for more modern rounded corners  */
     cursor: pointer;
-    font-size: 1.1rem; /* I added explicit font size in rem */
-    font-weight: 600; /* I added weight for better button hierarchy */
-    transition: all 0.3s ease; /* I added smooth transitions for interactions */
-    box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06); /* I added shadow in rem for depth */
-    position: relative; /* I added this for the shine effect */
-    overflow: hidden; /* I added this to contain the shine animation */
+    font-size: 1.1rem; /* added explicit font size in rem  */
+    font-weight: 600; /* added weight for better button hierarchy  */
+    transition: all 0.3s ease; /* added smooth transitions for interactions  */
+    box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06); /* added shadow in rem for depth  */
+    position: relative; /* added this for the shine effect  */
+    overflow: hidden; /* added this to contain the shine animation  */
 }
 
-/* I added this shine effect because it creates an engaging interaction when users hover */
+/* added this shine effect because it creates an engaging interaction when users hover  */
 .hero-text button::before {
     content: '';
     position: absolute;
@@ -237,7 +237,7 @@ body {
     transition: left 0.5s ease;
 }
 
-/* I enhanced the button hover because it provides satisfying feedback and encourages clicks */
+/* enhanced the button hover because it provides satisfying feedback and encourages clicks  */
 .hero-text button:hover {
     transform: translateY(-0.1875rem) scale(1.05);
     box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
@@ -248,7 +248,7 @@ body {
     left: 100%;
 }
 
-/* I added animation wrapper because entrance animations improve perceived performance */
+/* added animation wrapper because entrance animations improve perceived performance  */
 .hero-image {
     animation: slideInRight 0.8s ease-out;
     position: relative;
@@ -256,17 +256,17 @@ body {
 
 /* Made image fixed size to match the mockup. Mb too small */
 .hero-image img {
-    width: 100%; /* I changed from 360px to 100% for responsive design */
-    height: 18.75rem; /* I changed from 180px to rem and increased size for better impact */
+    width: 100%; /* changed from 360px to 100% for responsive design  */
+    height: 18.75rem; /* changed from 180px to rem and increased size for better impact  */
     object-fit: cover;
-    border-radius: 1.25rem; /* I changed from 4px to 1.25rem for more modern rounded corners */
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05); /* I added shadow for depth */
-    transition: all 0.3s ease; /* I added smooth transitions */
-    position: relative; /* I added this for layering */
+    border-radius: 1.25rem; /* changed from 4px to 1.25rem for more modern rounded corners  */
+    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05); /* added shadow for depth  */
+    transition: all 0.3s ease; /* added smooth transitions  */
+    position: relative; /* added this for layering  */
     z-index: 2;
 }
 
-/* I added this background effect because it creates visual interest and depth behind the image */
+/* added this background effect because it creates visual interest and depth behind the image  */
 .hero-image::before {
     content: '';
     position: absolute;
@@ -281,7 +281,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* I added these hover effects because they create engaging micro-interactions */
+/* added these hover effects because they create engaging micro-interactions  */
 .hero-image:hover::before {
     transform: rotate(3deg);
     opacity: 0.5;
@@ -291,19 +291,19 @@ body {
     transform: translateY(-0.3125rem) rotate(-1deg);
 }
 
-/* I added this gradient background because it creates visual separation between sections */
+/* added this gradient background because it creates visual separation between sections  */
 main {
     background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
 }
 
 /* Info section below hero. Just centered and added some padding */
 .info {
-    padding: 6rem 0; /* I changed from 50px 20px to 6rem 0 for better section spacing */
+    padding: 6rem 0; /* changed from 50px 20px to 6rem 0 for better section spacing  */
     text-align: center;
-    position: relative; /* I added this for the top accent line */
+    position: relative; /* added this for the top accent line  */
 }
 
-/* I added this accent line because it provides visual hierarchy and breaks up the content nicely */
+/* added this accent line because it provides visual hierarchy and breaks up the content nicely  */
 .info::before {
     content: '';
     position: absolute;
@@ -316,7 +316,7 @@ main {
     border-radius: 0.125rem;
 }
 
-/* I added explicit styling for the h2 because it needs proper hierarchy and responsive sizing */
+/* added explicit styling for the h2 because it needs proper hierarchy and responsive sizing  */
 .info h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
@@ -327,13 +327,13 @@ main {
 
 /* Used flex again to make the cards line up. Added a small gap so they don't look too crammed */
 .cards {
-    display: grid; /* I changed from flex to grid because it provides better responsive control and equal heights */
-    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); /* I used minmax for responsive design */
-    gap: 2rem; /* I increased gap from 15px to 2rem for better breathing room */
-    margin-top: 3rem; /* I added margin for spacing from heading */
+    display: grid; /* changed from flex to grid because it provides better responsive control and equal heights  */
+    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); /* used minmax for responsive design  */
+    gap: 2rem; /* increased gap from 15px to 2rem for better breathing room  */
+    margin-top: 3rem; /* added margin for spacing from heading  */
 }
 
-/* I added this media query because smaller screens need adjusted minimum width */
+/* added this media query because smaller screens need adjusted minimum width  */
 @media (max-width: 48rem) {
     .cards {
         grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
@@ -343,17 +343,17 @@ main {
 
 /* Limiting the card size and keeping text small like in the screenshot */
 .card {
-    background: white; /* I added white background for card separation */
-    border-radius: 1rem; /* I changed to rem and increased for modern appearance */
-    padding: 2rem; /* I added padding for content spacing */
-    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06); /* I added subtle shadow */
-    transition: all 0.3s ease; /* I added smooth transitions */
-    position: relative; /* I added this for the top accent line */
-    overflow: hidden; /* I added this to contain effects */
-    border: 0.0625rem solid rgba(56, 130, 246, 0.1); /* I added subtle border with theme color */
+    background: white; /* added white background for card separation  */
+    border-radius: 1rem; /* changed to rem and increased for modern appearance  */
+    padding: 2rem; /* added padding for content spacing  */
+    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06); /* added subtle shadow  */
+    transition: all 0.3s ease; /* added smooth transitions  */
+    position: relative; /* added this for the top accent line  */
+    overflow: hidden; /* added this to contain effects  */
+    border: 0.0625rem solid rgba(56, 130, 246, 0.1); /* added subtle border with theme color  */
 }
 
-/* I added this top accent line because it adds visual hierarchy and connects to the theme */
+/* added this top accent line because it adds visual hierarchy and connects to the theme  */
 .card::before {
     content: '';
     position: absolute;
@@ -366,7 +366,7 @@ main {
     transition: transform 0.3s ease;
 }
 
-/* I added this hover effect because it creates engaging interaction and draws attention to content */
+/* added this hover effect because it creates engaging interaction and draws attention to content  */
 .card:hover {
     transform: translateY(-0.625rem);
     box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
@@ -380,28 +380,28 @@ main {
 /* Border color picked randomly. Not sure if it matches exactly but it adds some structure */
 .card img {
     width: 100%;
-    height: 11.25rem; /* I changed from 120px to rem and increased for better visual impact */
-    object-fit: cover; /* I kept this for proper image scaling */
-    border-radius: 0.75rem; /* I changed to rem for consistency */
-    margin-bottom: 1.5rem; /* I changed from 8px to rem */
-    transition: all 0.3s ease; /* I added smooth transitions */
-    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06); /* I removed the blue border and added subtle shadow instead for cleaner look */
+    height: 11.25rem; /* changed from 120px to rem and increased for better visual impact  */
+    object-fit: cover; /* kept this for proper image scaling  */
+    border-radius: 0.75rem; /* changed to rem for consistency  */
+    margin-bottom: 1.5rem; /* changed from 8px to rem  */
+    transition: all 0.3s ease; /* added smooth transitions  */
+    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06); /* removed the blue border and added subtle shadow instead for cleaner look  */
 }
 
-/* I added this image hover effect because it creates engaging micro-interactions */
+/* added this image hover effect because it creates engaging micro-interactions  */
 .card:hover img {
     transform: scale(1.05);
     box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06);
 }
 
-/* I added explicit styling for card text because it needs proper sizing and hierarchy */
+/* added explicit styling for card text because it needs proper sizing and hierarchy  */
 .card p {
     color: #1f2937;
     line-height: 1.6;
-    font-size: 1rem; /* I set explicit size in rem */
+    font-size: 1rem; /* set explicit size in rem  */
 }
 
-/* I added styling for emp tags because they should stand out with the theme color */
+/* added styling for emp tags because they should stand out with the theme color  */
 .card emp {
     color: #3882f6;
     font-weight: 600;
@@ -410,13 +410,13 @@ main {
 
 /* Wanted this section to look like a quote/testimonial. Light gray background to separate it */
 .quote {
-    background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%); /* I changed to gradient for visual interest while keeping the light gray theme */
-    padding: 6rem 0; /* I changed from 50px 20px to 6rem 0 for consistency */
-    position: relative; /* I added this for the decorative quote mark */
-    overflow: hidden; /* I added this to contain the quote mark */
+    background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%); /* changed to gradient for visual interest while keeping the light gray theme  */
+    padding: 6rem 0; /* changed from 50px 20px to 6rem 0 for consistency  */
+    position: relative; /* added this for the decorative quote mark  */
+    overflow: hidden; /* added this to contain the quote mark  */
 }
 
-/* I added this large decorative quote mark because it's a common design pattern for testimonial sections */
+/* added this large decorative quote mark because it's a common design pattern for testimonial sections  */
 .quote::before {
     content: '"';
     position: absolute;
@@ -429,7 +429,7 @@ main {
     z-index: 1;
 }
 
-/* I added this container because it provides better content width control and centering */
+/* added this container because it provides better content width control and centering  */
 .quote-container {
     max-width: 50rem;
     margin: 0 auto;
@@ -441,29 +441,29 @@ main {
 
 /* Just made the quote a bit bigger to emphasize it */
 .quote-text {
-    font-size: clamp(1.5rem, 3vw, 2.25rem); /* I changed to clamp() for responsive sizing */
-    font-style: italic; /* I kept the italic style for quote appearance */
+    font-size: clamp(1.5rem, 3vw, 2.25rem); /* changed to clamp() for responsive sizing  */
+    font-style: italic; /* kept the italic style for quote appearance  */
     color: #1f2937;
-    margin-bottom: 2rem; /* I changed from 10px to 2rem for better spacing */
-    line-height: 1.5; /* I added this for better readability */
+    margin-bottom: 2rem; /* changed from 10px to 2rem for better spacing  */
+    line-height: 1.5; /* added this for better readability  */
     position: relative;
 }
 
 /* Aligned author name to the right. Not 100% sure if this is how it was in the mockup */
 .quote-author {
-    font-size: 1.25rem; /* I changed to rem and increased size slightly */
-    font-weight: 700; /* I changed from bold to 700 for consistency */
-    color: #3882f6; /* I changed to blue to connect with the theme */
+    font-size: 1.25rem; /* changed to rem and increased size slightly  */
+    font-weight: 700; /* changed from bold to 700 for consistency  */
+    color: #3882f6; /* changed to blue to connect with the theme  */
     position: relative;
 }
 
-/* I added this dash before the author name because it's a common typography convention for attributions */
+/* added this dash before the author name because it's a common typography convention for attributions  */
 .quote-author::before {
     content: '—';
     margin-right: 0.5rem;
 }
 
-/* I added this section wrapper because it provides proper spacing and background separation */
+/* added this section wrapper because it provides proper spacing and background separation  */
 .cta {
     padding: 6rem 0;
     background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
@@ -471,20 +471,20 @@ main {
 
 /* CTA (call to action) box toward the end. Tried to keep it visually strong so user notices it */
 .cta-box {
-    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%); /* I changed to gradient for visual depth */
+    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%); /* changed to gradient for visual depth  */
     color: white;
-    padding: 3rem; /* I changed from 30px to 3rem for consistency */
-    border-radius: 1.25rem; /* I changed from 6px to 1.25rem for modern appearance */
+    padding: 3rem; /* changed from 30px to 3rem for consistency  */
+    border-radius: 1.25rem; /* changed from 6px to 1.25rem for modern appearance  */
     display: flex;
     justify-content: space-between;
-    align-items: center; /* I added this for better vertical alignment */
-    gap: 2rem; /* I added gap instead of flex-wrap for cleaner spacing */
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05); /* I added shadow for depth */
-    position: relative; /* I added this for the animated background */
-    overflow: hidden; /* I added this to contain the animation */
+    align-items: center; /* added this for better vertical alignment  */
+    gap: 2rem; /* added gap instead of flex-wrap for cleaner spacing  */
+    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05); /* added shadow for depth  */
+    position: relative; /* added this for the animated background  */
+    overflow: hidden; /* added this to contain the animation  */
 }
 
-/* I added this animated background because it creates subtle movement that draws attention */
+/* added this animated background because it creates subtle movement that draws attention  */
 .cta-box::before {
     content: '';
     position: absolute;
@@ -496,7 +496,7 @@ main {
     animation: rotate 20s linear infinite;
 }
 
-/* I added this media query because mobile needs vertical stacking */
+/* added this media query because mobile needs vertical stacking  */
 @media (max-width: 48rem) {
     .cta-box {
         flex-direction: column;
@@ -504,14 +504,14 @@ main {
     }
 }
 
-/* I added explicit styling for CTA heading because it needs proper hierarchy */
+/* added explicit styling for CTA heading because it needs proper hierarchy  */
 .cta-text h3 {
     font-size: clamp(1.5rem, 3vw, 2rem);
     margin-bottom: 1rem;
     color: white;
 }
 
-/* I added explicit styling for CTA text because it needs proper contrast and readability */
+/* added explicit styling for CTA text because it needs proper contrast and readability  */
 .cta-text p {
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.9);
@@ -522,20 +522,20 @@ main {
 .cta-button {
     background: white;
     color: #3882f6;
-    padding: 1rem 2rem; /* I changed from 8px 16px to 1rem 2rem for better proportions */
+    padding: 1rem 2rem; /* changed from 8px 16px to 1rem 2rem for better proportions  */
     border: none;
-    border-radius: 0.75rem; /* I changed from 4px to 0.75rem for consistency */
-    font-weight: 700; /* I changed from bold to 700 for consistency */
-    font-size: 1.1rem; /* I added explicit size */
+    border-radius: 0.75rem; /* changed from 4px to 0.75rem for consistency  */
+    font-weight: 700; /* changed from bold to 700 for consistency  */
+    font-size: 1.1rem; /* added explicit size  */
     cursor: pointer;
-    transition: all 0.3s ease; /* I added smooth transitions */
-    box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06); /* I added shadow */
-    position: relative; /* I added this for layering above animated background */
+    transition: all 0.3s ease; /* added smooth transitions  */
+    box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06); /* added shadow  */
+    position: relative; /* added this for layering above animated background  */
     z-index: 2;
-    white-space: nowrap; /* I added this to prevent text wrapping */
+    white-space: nowrap; /* added this to prevent text wrapping  */
 }
 
-/* I enhanced the CTA button hover because it should encourage action */
+/* enhanced the CTA button hover because it should encourage action  */
 .cta-button:hover {
     transform: translateY(-0.1875rem) scale(1.05);
     box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
@@ -544,14 +544,14 @@ main {
 
 /* Simple footer. Dark like header, small text */
 .footer {
-    background: linear-gradient(135deg, #1f2937 0%, #111827 100%); /* I changed to gradient to match header */
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%); /* changed to gradient to match header  */
     color: #e5e7eb;
     text-align: center;
-    padding: 3rem 0; /* I changed from 20px to 3rem for better proportions */
-    position: relative; /* I added this for the top accent line */
+    padding: 3rem 0; /* changed from 20px to 3rem for better proportions  */
+    position: relative; /* added this for the top accent line  */
 }
 
-/* I added this accent line because it provides visual separation and connects to the theme */
+/* added this accent line because it provides visual separation and connects to the theme  */
 .footer::before {
     content: '';
     position: absolute;
@@ -562,13 +562,13 @@ main {
     background: linear-gradient(90deg, transparent, #3882f6, transparent);
 }
 
-/* I kept the small text size but converted to rem */
+/* kept the small text size but converted to rem  */
 .footer p {
     font-size: 0.95rem;
-    opacity: 0.8; /* I added slight transparency for hierarchy */
+    opacity: 0.8; /* added slight transparency for hierarchy  */
 }
 
-/* I added these keyframe animations because they create engaging entrance effects */
+/* added these keyframe animations because they create engaging entrance effects  */
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -611,7 +611,7 @@ main {
     }
 }
 
-/* I added staggered animations for cards because it creates a nice sequential reveal effect */
+/* added staggered animations for cards because it creates a nice sequential reveal effect  */
 .card {
     animation: fadeInUp 0.6s ease-out;
     animation-fill-mode: both;
@@ -622,7 +622,7 @@ main {
 .card:nth-child(3) { animation-delay: 0.3s; }
 .card:nth-child(4) { animation-delay: 0.4s; }
 
-/* I added this mobile-specific media query because very small screens need additional adjustments */
+/* added this mobile-specific media query because very small screens need additional adjustments  */
 @media (max-width: 30rem) {
     .hero-text h1 {
         font-size: 2rem;
@@ -646,7 +646,7 @@ main {
     }
 }
 
-/* I added this accessibility feature because users with motion sensitivity should have a comfortable experience */
+/* added this accessibility feature because users with motion sensitivity should have a comfortable experience  */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -655,14 +655,14 @@ main {
     }
 }
 
-/* I added focus styles because keyboard navigation needs clear visual indicators */
+/* added focus styles because keyboard navigation needs clear visual indicators  */
 button:focus,
 a:focus {
     outline: 0.125rem solid #3882f6;
     outline-offset: 0.125rem;
 }
 
-/* I added custom scrollbar styling because it provides a more cohesive brand experience */
+/* added custom scrollbar styling because it provides a more cohesive brand experience  */
 ::-webkit-scrollbar {
     width: 0.5rem;
 }
