@@ -19,11 +19,11 @@ interpretation of words. If needed. -->
     <header class="header">
         <!-- Initial block element div created for top most header section with logo and navigation links. New line and full page width. -->
         <div class="container header-top">
-            <div class="logo">FocusFlow</div>
-            <nav class="nav">
-                <a href="#">Features</a>
-                <a href="#">Pricing</a>
-                <a href="#">Contact</a>
+            <h1 class="logo">FocusFlow</h1> <!-- I changed from div to h1 because it's the main site title and improves SEO -->
+            <nav class="nav" aria-label="Main navigation"> <!-- I added aria-label for better accessibility -->
+                <a href="pages/features.html">Features</a> <!-- I added proper links to the new pages -->
+                <a href="pages/pricing.html">Pricing</a>
+                <a href="pages/contact.html">Contact</a>
             </nav>
         </div>
 
@@ -31,17 +31,17 @@ interpretation of words. If needed. -->
 
         <div class="container hero">
             <!-- Second block element div created for hero section with text and image. New line and full page width. -->
-            <div class="hero-text">
-                <h1>Boost Your Productivity</h1>
+            <article class="hero-text"> <!-- I changed from div to article because this is the main content introduction -->
+                <h2>Boost Your Productivity</h2> <!-- I changed from h1 to h2 because the logo is now h1 -->
                 <p><strong>FocusFlow</strong> helps teams and individuals manage their time, tasks, and goals with smart
                     planning and
                     intuitive tools.</p>
-                <button>Get Started</button>
-            </div>
-            <div class="hero-image">
+                <button type="button" aria-label="Get started with FocusFlow">Get Started</button> <!-- I added proper button attributes for accessibility -->
+            </article>
+            <figure class="hero-image"> <!-- I changed from div to figure because it contains an image with context -->
                 <img src="https://media.licdn.com/dms/image/v2/D4E12AQFY_EoQc7yepQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1688731581211?e=2147483647&v=beta&t=4bzIbki5-5XNUO0Oe9PJpocNm6chxWc8lhxWZnoLH3Q"
-                    alt="Team collaborating" />
-            </div>
+                    alt="Team collaborating on a project" /> <!-- I enhanced the alt text for better accessibility -->
+            </figure>
         </div>
     </header>
 
@@ -51,60 +51,60 @@ interpretation of words. If needed. -->
 
         <!-- Info section -->
 
-        <section class="info">
-            <h2>What Makes FocusFlow Powerful</h2>
-            <div class="cards">
+        <section class="info" aria-labelledby="features-heading"> <!-- I added aria-labelledby for better accessibility -->
+            <h2 id="features-heading">What Makes FocusFlow Powerful</h2> <!-- I added id for the aria-labelledby connection -->
+            <div class="cards" role="list" aria-label="Feature cards"> <!-- I added semantic roles for better screen reader support -->
 
                 <!-- Card: Individual reusable content block, common design pattern for content boxes -->
 
-                <div class="card">
+                <article class="card" role="listitem"> <!-- I changed from div to article and added role for better semantics -->
                     <img src="https://hips.hearstapps.com/hmg-prod/images/neatly-organized-stationery-in-white-trays-royalty-free-image-1642735905.jpg?crop=0.88931xw:1xh;center,top&resize=1200:*"
-                        alt="Task board" />
+                        alt="Organized task board with sticky notes" />
                     <p>Organize tasks with drag-and-drop simplicity. Plan your day and prioritize what matters most.</p>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card" role="listitem"> <!-- I changed from div to article for better content semantics -->
                     <img src="https://paperwhisper.com/cdn/shop/files/ryu-ryu-2025-3-month-desk-calendar-illustration-calendars-601349.jpg?v=1728734927&width=1946"
-                        alt="Calendar planning" />
+                        alt="Calendar with scheduled appointments" />
                     <p>Sync your calendars and <emp>never miss a deadline again.</emp> Stay on top of your commitments.
                     </p>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card" role="listitem"> <!-- I changed from div to article for better content semantics -->
                     <img src="https://blog.huddles.app/wp-content/uploads/effective-team-collaboration-min.jpg"
-                        alt="Team collaboration" />
+                        alt="Team members collaborating around a table" />
                     <p>Collaborate in real-time with built-in chat, notes, and file sharing. No more lost messages.</p>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card" role="listitem"> <!-- I changed from div to article for better content semantics -->
                     <img src="https://www.zohowebstatic.com/sites/zweb/images/analytics/google_analytics_header.png"
-                        alt="Analytics dashboard" />
+                        alt="Analytics dashboard showing productivity metrics" />
                     <p>Track your progress with visual dashboards and productivity reports <emp>tailored to your goals.
                         </emp>
                     </p>
-                </div>
+                </article>
             </div>
 
         </section>
 
         <!-- Quote Section preceeding Call To Action for higher user CTA probability -->
 
-        <section class="quote">
-            <div class="quote-container">
+        <section class="quote" aria-label="Customer testimonial"> <!-- I added aria-label for better accessibility -->
+            <blockquote class="quote-container"> <!-- I changed from div to blockquote because this is a quote -->
                 <p class="quote-text">
-                    “FocusFlow changed the way we work. It's like having a personal assistant keeping our team aligned
-                    and on track every day.”
+                    "FocusFlow changed the way we work. It's like having a personal assistant keeping our team aligned
+                    and on track every day."
                 </p>
-                <p class="quote-author">– Jon Doe, Project Manager</p>
-            </div>
+                <cite class="quote-author">– Jon Doe, Project Manager</cite> <!-- I changed from p to cite because it's the source of the quote -->
+            </blockquote>
         </section>
 
         <!-- Call To Action section. To encourage users to take action -->
 
-        <section class="cta">
+        <section class="cta" aria-label="Call to action"> <!-- I added aria-label for better accessibility -->
             <div class="cta-box">
-                <div class="cta-text">
+                <article class="cta-text"> <!-- I changed from div to article because this is content -->
                     <h3><em>Ready to reclaim your time?</em></h3>
                     <p>Start using <strong>FocusFlow</strong> today and bring clarity and control to your workflow.</p>
-                </div>
-                <button class="cta-button">Join Now</button>
+                </article>
+                <button type="button" class="cta-button" aria-label="Join FocusFlow now">Join Now</button> <!-- I added proper button attributes -->
             </div>
         </section>
 
