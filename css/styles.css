@@ -580,10 +580,11 @@ a:focus {
 
 /* New Page Styles - Hero Sections */
 .hero-section {
-    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
+    color: #f3f4f6;
 }
 
 .hero-section::before {
@@ -593,7 +594,7 @@ a:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 70%, rgba(56, 130, 246, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -607,14 +608,17 @@ a:focus {
 .hero-content h2 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    color: white;
+    background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
 .hero-content p {
     font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-    color: rgba(255, 255, 255, 0.9);
+    color: #d1d5db;
     max-width: 40rem;
     margin: 0 auto;
     line-height: 1.6;
@@ -1169,7 +1173,7 @@ a:focus {
 /* CTA Section for New Pages */
 .cta-section {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
     position: relative;
     overflow: hidden;
 }
@@ -1181,7 +1185,7 @@ a:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 70% 30%, rgba(56, 130, 246, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -1194,13 +1198,16 @@ a:focus {
 .cta-content h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    color: white;
+    background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1.5rem;
 }
 
 .cta-content p {
     font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-    color: rgba(255, 255, 255, 0.9);
+    color: #d1d5db;
     margin-bottom: 2.5rem;
     max-width: 40rem;
     margin-left: auto;
@@ -1230,8 +1237,8 @@ a:focus {
 }
 
 .primary-button {
-    background: white;
-    color: #3882f6;
+    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
+    color: white;
 }
 
 .primary-button::before {
@@ -1241,13 +1248,13 @@ a:focus {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(56, 130, 246, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s ease;
 }
 
 .primary-button:hover {
     transform: translateY(-0.125rem);
-    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0.5rem 1rem rgba(56, 130, 246, 0.3);
 }
 
 .primary-button:hover::before {
