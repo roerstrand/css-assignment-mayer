@@ -11,26 +11,143 @@
 <body id="top">
     <header class="header">
         <div class="container header-top">
-            <div class="logo">FocusFlow</div>
-            <nav class="nav">
+            <h1 class="logo">FocusFlow</h1>
+            <nav class="nav" aria-label="Main navigation">
                 <a href="../index.html">Homepage</a>
                 <a href="./features.html">Features</a>
-                <a href="./pricing.html">Pricing</a>
+                <a href="./pricing.html" aria-current="page">Pricing</a>
                 <a href="./contact.html">Contact</a>
             </nav>
         </div>
     </header>
+    
     <main>
-        <section class="container">
-            <h1>Simple, Transparent Pricing</h1>
-            <p>Choose the plan that fits your needs. No hidden fees, no surprises.</p>
-            <ul>
-                <li><strong>Free:</strong> Basic features with limited storage</li>
-                <li><strong>Pro ($9.99/month):</strong> Advanced tools and analytics</li>
-                <li><strong>Team ($29.99/month):</strong> Collaboration and admin tools</li>
-            </ul>
+        <section class="hero-section">
+            <div class="container">
+                <article class="hero-content">
+                    <h2>Simple, Transparent Pricing</h2>
+                    <p>Choose the plan that fits your needs. No hidden fees, no surprises.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="pricing-grid">
+            <div class="container">
+                <div class="pricing-container">
+                    
+                    <article class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Free</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">0</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p>Basic features with limited storage. Perfect for getting started.</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Up to 5 team members</li>
+                            <li>Basic task management</li>
+                            <li>Simple time tracking</li>
+                            <li>Email support</li>
+                            <li>1GB storage</li>
+                        </ul>
+                        <button type="button" class="pricing-button">Get Started Free</button>
+                    </article>
+
+                    <article class="pricing-card featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Pro</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">9.99</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p>Advanced tools and analytics for growing teams.</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Up to 25 team members</li>
+                            <li>Advanced task management</li>
+                            <li>Detailed analytics</li>
+                            <li>Priority support</li>
+                            <li>10GB storage</li>
+                            <li>Team collaboration</li>
+                            <li>Custom workflows</li>
+                        </ul>
+                        <button type="button" class="pricing-button featured">Start Free Trial</button>
+                    </article>
+
+                    <article class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Team</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">29.99</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p>Collaboration and admin tools for large organizations.</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Unlimited team members</li>
+                            <li>Advanced automation</li>
+                            <li>Custom integrations</li>
+                            <li>Dedicated support</li>
+                            <li>Unlimited storage</li>
+                            <li>Advanced security</li>
+                            <li>Custom branding</li>
+                            <li>API access</li>
+                        </ul>
+                        <button type="button" class="pricing-button">Contact Sales</button>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    
+                    <article class="faq-item">
+                        <h3>Can I change plans anytime?</h3>
+                        <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.</p>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3>Is there a free trial?</h3>
+                        <p>Yes, all paid plans come with a 14-day free trial. No credit card required to start.</p>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3>What payment methods do you accept?</h3>
+                        <p>We accept all major credit cards, PayPal, and bank transfers for annual plans.</p>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3>Can I cancel anytime?</h3>
+                        <p>Absolutely. You can cancel your subscription at any time with no cancellation fees.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Still Have Questions?</h2>
+                    <p>Our team is here to help you choose the right plan for your needs.</p>
+                    <div class="cta-buttons">
+                        <button type="button" class="primary-button" onclick="window.location.href='./contact.html'">Contact Support</button>
+                        <button type="button" class="secondary-button" onclick="window.location.href='./features.html'">View Features</button>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+    
     <footer class="footer">
         <p><a href="#top">Back to top ↑</a></p>
         <p>© 2025 FocusFlow. All rights reserved.</p>
