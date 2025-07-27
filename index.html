@@ -1,108 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Additional span elements with other lang attributes can be used inside website for accurate proncunciation and AT 
-interpretation of words. If needed. -->
-
 <head>
     <meta charset="UTF-8" />
-    <!-- Responsive design meta tag for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FocusFlow - Productivity Simplified</title>
     <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
-<body>
-
-    <!-- Header section created initially with nav and additional homepage div container -->
+<body id="top">
 
     <header class="header">
-        <!-- Initial block element div created for top most header section with logo and navigation links. New line and full page width. -->
         <div class="container header-top">
             <div class="logo">FocusFlow</div>
             <nav class="nav">
-                <a href="#">Features</a>
-                <a href="#">Pricing</a>
-                <a href="#">Contact</a>
+                <a href="./index.html">Homepage</a>
+                <a href="./pages/features.html">Features</a>
+                <a href="./pages/pricing.html">Pricing</a>
+                <a href="./pages/contact.html">Contact</a>
             </nav>
-        </div>
-
-        <!-- Homepage banner-like section aka "Hero" -->
-
-        <div class="container hero">
-            <!-- Second block element div created for hero section with text and image. New line and full page width. -->
-            <div class="hero-text">
-                <h1>Boost Your Productivity</h1>
-                <p><strong>FocusFlow</strong> helps teams and individuals manage their time, tasks, and goals with smart
-                    planning and
-                    intuitive tools.</p>
-                <button>Get Started</button>
-            </div>
-            <div class="hero-image">
-                <img src="https://media.licdn.com/dms/image/v2/D4E12AQFY_EoQc7yepQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1688731581211?e=2147483647&v=beta&t=4bzIbki5-5XNUO0Oe9PJpocNm6chxWc8lhxWZnoLH3Q"
-                    alt="Team collaborating" />
-            </div>
         </div>
     </header>
 
-    <!-- Main created after header -->
-
     <main>
 
-        <!-- Info section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-inner">
+                    <div class="hero-text">
+                        <h1>Boost Your Productivity</h1>
+                        <p><strong>FocusFlow</strong> helps teams and individuals manage their time, tasks, and goals
+                            with smart planning and intuitive tools.</p>
+                        <button>Get Started</button>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E12AQFY_EoQc7yepQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1688731581211?e=2147483647&v=beta&t=4bzIbki5-5XNUO0Oe9PJpocNm6chxWc8lhxWZnoLH3Q"
+                            alt="A person in a suit holding a tablet with digital tools and various advanced machines/robots in the background" />
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="info">
             <h2>What Makes FocusFlow Powerful</h2>
             <div class="cards">
-
-                <!-- Card: Individual reusable content block, common design pattern for content boxes -->
-
-                <div class="card">
+                <figure class="card">
                     <img src="https://hips.hearstapps.com/hmg-prod/images/neatly-organized-stationery-in-white-trays-royalty-free-image-1642735905.jpg?crop=0.88931xw:1xh;center,top&resize=1200:*"
-                        alt="Task board" />
-                    <p>Organize tasks with drag-and-drop simplicity. Plan your day and prioritize what matters most.</p>
-                </div>
-                <div class="card">
+                        alt="Neatly organized office tools like pens, calculators and rubbers in an organizer-box" />
+                    <figcaption>Organize tasks with drag-and-drop simplicity. Plan your day and prioritize what
+                        matters
+                        most.</figcaption>
+                </figure>
+                <figure class="card">
                     <img src="https://paperwhisper.com/cdn/shop/files/ryu-ryu-2025-3-month-desk-calendar-illustration-calendars-601349.jpg?v=1728734927&width=1946"
-                        alt="Calendar planning" />
-                    <p>Sync your calendars and <emp>never miss a deadline again.</emp> Stay on top of your commitments.
-                    </p>
-                </div>
-                <div class="card">
+                        alt="A simple calendar showing the first half of the month" />
+                    <figcaption>Sync your calendars and <emp>never miss a deadline again.</emp> Stay on top of
+                        your
+                        commitments.</figcaption>
+                </figure>
+                <figure class="card">
                     <img src="https://blog.huddles.app/wp-content/uploads/effective-team-collaboration-min.jpg"
-                        alt="Team collaboration" />
-                    <p>Collaborate in real-time with built-in chat, notes, and file sharing. No more lost messages.</p>
-                </div>
-                <div class="card">
+                        alt="Team of four persons working together using laptops around a table and making a joint high-five" />
+                    <figcaption>Collaborate in real-time with built-in chat, notes, and file sharing. No more
+                        lost
+                        messages.</figcaption>
+                </figure>
+                <figure class="card">
                     <img src="https://www.zohowebstatic.com/sites/zweb/images/analytics/google_analytics_header.png"
-                        alt="Analytics dashboard" />
-                    <p>Track your progress with visual dashboards and productivity reports <emp>tailored to your goals.
-                        </emp>
-                    </p>
-                </div>
+                        alt="Analytics dashboard showing charts and progress reports" />
+                    <figcaption>Track your progress with visual dashboards and productivity reports <emp>
+                            tailored to
+                            your goals.</emp>
+                    </figcaption>
+                </figure>
             </div>
-
         </section>
-
-        <!-- Quote Section preceeding Call To Action for higher user CTA probability -->
 
         <section class="quote">
             <div class="quote-container">
                 <p class="quote-text">
-                    “FocusFlow changed the way we work. It's like having a personal assistant keeping our team aligned
+                    “FocusFlow changed the way we work. It's like having a personal assistant keeping our team
+                    aligned
                     and on track every day.”
                 </p>
-                <p class="quote-author">– Jon Doe, Project Manager</p>
+                <p class="quote-author"> Jon Doe, Project Manager</p>
             </div>
         </section>
 
-        <!-- Call To Action section. To encourage users to take action -->
-
         <section class="cta">
-            <div class="cta-box">
+            <div class="container cta-box">
                 <div class="cta-text">
                     <h3><em>Ready to reclaim your time?</em></h3>
-                    <p>Start using <strong>FocusFlow</strong> today and bring clarity and control to your workflow.</p>
+                    <p>Start using <strong>FocusFlow</strong> today and bring clarity and control to your
+                        workflow.</p>
                 </div>
                 <button class="cta-button">Join Now</button>
             </div>
@@ -110,8 +100,8 @@ interpretation of words. If needed. -->
 
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
+        <p><a href="#top">Back to top ↑</a></p>
         <p>© 2025 FocusFlow. All rights reserved.</p>
     </footer>
 
