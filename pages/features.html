@@ -4,31 +4,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Features - FocusFlow</title>
+    <title>FocusFlow - Features</title>
     <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
-<body>
-
+<body id="top">
     <header class="header">
         <div class="container header-top">
             <h1 class="logo">FocusFlow</h1>
             <nav class="nav" aria-label="Main navigation">
-                <a href="features.html" aria-current="page">Features</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="contact.html">Contact</a>
-                <a href="../index.html">Home</a>
+                <a href="../index.html">Homepage</a>
+                <a href="./features.html" aria-current="page">Features</a>
+                <a href="./pricing.html">Pricing</a>
+                <a href="./contact.html">Contact</a>
             </nav>
         </div>
     </header>
-
+    
     <main>
-
         <section class="hero-section">
             <div class="container">
                 <article class="hero-content">
-                    <h2>Powerful Features for Modern Teams</h2>
-                    <p>Discover how FocusFlow transforms your workflow with intelligent tools designed for productivity.</p>
+                    <h2>Explore Our Features</h2>
+                    <p>Discover tools designed to boost your productivity and streamline your workflow.</p>
                 </article>
             </div>
         </section>
@@ -45,7 +43,7 @@
                             </svg>
                         </div>
                         <h3>Task Management</h3>
-                        <p>Organize tasks with drag-and-drop simplicity. Create, prioritize, and track progress with intuitive visual boards.</p>
+                        <p>Smart scheduling with drag-and-drop simplicity. Create, prioritize, and track progress with intuitive visual boards.</p>
                         <ul class="feature-list">
                             <li>Drag & drop interface</li>
                             <li>Priority levels</li>
@@ -61,13 +59,31 @@
                                 <polyline points="12,6 12,12 16,14"/>
                             </svg>
                         </div>
-                        <h3>Time Tracking</h3>
-                        <p>Monitor your productivity with built-in time tracking. Analyze patterns and optimize your workflow.</p>
+                        <h3>AI-Assisted Focus Modes</h3>
+                        <p>Monitor your productivity with built-in time tracking and AI-powered focus sessions.</p>
                         <ul class="feature-list">
                             <li>Automatic time tracking</li>
                             <li>Productivity analytics</li>
                             <li>Focus sessions</li>
                             <li>Break reminders</li>
+                        </ul>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="20" x2="18" y2="10"/>
+                                <line x1="12" y1="20" x2="12" y2="4"/>
+                                <line x1="6" y1="20" x2="6" y2="14"/>
+                            </svg>
+                        </div>
+                        <h3>Detailed Analytics Dashboard</h3>
+                        <p>Get insights into your productivity with detailed analytics and customizable reports.</p>
+                        <ul class="feature-list">
+                            <li>Performance metrics</li>
+                            <li>Custom reports</li>
+                            <li>Data visualization</li>
+                            <li>Export capabilities</li>
                         </ul>
                     </article>
 
@@ -80,31 +96,13 @@
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                             </svg>
                         </div>
-                        <h3>Team Collaboration</h3>
+                        <h3>Real-time Collaboration Tools</h3>
                         <p>Work together seamlessly with real-time collaboration tools. Share files, chat, and coordinate effortlessly.</p>
                         <ul class="feature-list">
                             <li>Real-time chat</li>
                             <li>File sharing</li>
                             <li>Team calendars</li>
                             <li>Project comments</li>
-                        </ul>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="18" y1="20" x2="18" y2="10"/>
-                                <line x1="12" y1="20" x2="12" y2="4"/>
-                                <line x1="6" y1="20" x2="6" y2="14"/>
-                            </svg>
-                        </div>
-                        <h3>Analytics & Reports</h3>
-                        <p>Get insights into your productivity with detailed analytics and customizable reports.</p>
-                        <ul class="feature-list">
-                            <li>Performance metrics</li>
-                            <li>Custom reports</li>
-                            <li>Data visualization</li>
-                            <li>Export capabilities</li>
                         </ul>
                     </article>
 
@@ -153,19 +151,18 @@
                     <h2>Ready to Get Started?</h2>
                     <p>Join thousands of teams already using FocusFlow to boost their productivity.</p>
                     <div class="cta-buttons">
-                        <button type="button" class="primary-button">Start Free Trial</button>
-                        <button type="button" class="secondary-button">View Pricing</button>
+                        <button type="button" class="primary-button" onclick="window.location.href='./pricing.html'">Start Free Trial</button>
+                        <button type="button" class="secondary-button" onclick="window.location.href='./pricing.html'">View Pricing</button>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
-
+    
     <footer class="footer">
+        <p><a href="#top">Back to top ↑</a></p>
         <p>© 2025 FocusFlow. All rights reserved.</p>
     </footer>
-
 </body>
 
-</html> 
+</html>

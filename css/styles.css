@@ -1,6 +1,3 @@
-/* Downloaded Roboto and added it locally as in instruction video. Tried to load regular and bold only for now. Can 
-add italic */
-
 @font-face {
     font-family: 'Roboto';
     src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
@@ -15,53 +12,44 @@ add italic */
     font-style: normal;
 }
 
-/* Setting box-sizing so padding doesn't break layouts. For lectures and material most common and safe to avoid overextensions 
-with box model padding, borders and margins. Also clearing default margin/padding */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* I changed this because smooth scrolling improves user experience when clicking anchor links */
 html {
     scroll-behavior: smooth;
 }
 
-/* Set Roboto as base font. Added fallback in case it doesn't load as instruction video. Color is a safe dark gray. 
-Background slightly off-white */
 body {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* I added system fonts as additional fallbacks for better compatibility */
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: #f9fafb;
     color: #1f2937;
-    line-height: 1.6; /* I changed from 1.5 to 1.6 because it improves readability */
-    font-size: 1rem; /* I changed to rem instead of implicit px for better accessibility */
-    overflow-x: hidden; /* I added this to prevent horizontal scrolling issues on mobile */
+    line-height: 1.6;
+    font-size: 1rem;
+    overflow-x: hidden;
 }
 
-/* Used a container to center content and keep max width. Picked 960px because it looked okay visually */
 .container {
-    max-width: 75rem; /* I changed from 960px to 75rem (1200px) because it gives more breathing room on larger screens */
+    max-width: 75rem;
     margin: 0 auto;
-    padding: 0 2rem; /* I changed from 20px to 2rem for consistency and better mobile padding */
+    padding: 0 2rem;
 }
 
-/* I added this media query because smaller screens need less padding to maximize content space */
 @media (max-width: 48rem) {
     .container {
         padding: 0 1rem;
     }
 }
 
-/* Gave the header a dark background to match the design. Not sure about the exact color but looks close enough */
 .header {
-    background: linear-gradient(135deg, #1f2937 0%, #111827 100%); /* I changed to gradient because it adds visual depth without changing the base color */
-    position: relative; /* I added this for positioning pseudo-elements */
-    overflow: hidden; /* I added this to contain the gradient overlay effect */
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05); /* I added shadow in rem for depth */
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
 }
 
-/* I added this because a subtle radial gradient overlay adds visual interest without changing the color scheme */
 .header::before {
     content: '';
     position: absolute;
@@ -73,27 +61,24 @@ body {
     pointer-events: none;
 }
 
-/* Used flex here to spread out logo and nav. Grid not needed since only one row, not 2D with both rows and columns */
 .header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0; /* I changed from implicit to explicit padding in rem for consistency */
-    position: relative; /* I added this to ensure content appears above the gradient overlay */
+    padding: 1.5rem 0;
+    position: relative;
     z-index: 10;
 }
 
-/* Just making the logo bold and white so it stands out on dark background */
 .logo {
-    font-size: 2rem; /* I changed from 1,25rem to 2rem because the comma was a typo and larger size looks more prominent */
+    font-size: 2rem;
     font-weight: bold;
     color: white;
-    text-decoration: none; /* I added this in case the logo becomes a link later */
-    position: relative; /* I added this for the hover effect positioning */
-    transition: all 0.3s ease; /* I added smooth transitions for better user experience */
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-/* I added this hover effect because it provides visual feedback when users interact with the logo */
 .logo::after {
     content: '';
     position: absolute;
@@ -110,26 +95,23 @@ body {
     width: 100%;
 }
 
-/* I added this wrapper because it provides better spacing control for navigation items */
 .nav {
     display: flex;
     gap: 2rem;
     align-items: center;
 }
 
-/* Navigation links. Just added spacing between them. Used light gray so it's visible on dark background */
 .nav a {
     color: #e5e7eb;
     text-decoration: none;
-    font-size: 1.1rem; /* I changed from 1rem to 1.1rem for better readability */
-    font-weight: 500; /* I added medium weight for better visual hierarchy */
-    position: relative; /* I added this for hover effect positioning */
-    transition: all 0.3s ease; /* I added smooth transitions for better interactions */
-    padding: 0.5rem 1rem; /* I added padding to increase click area */
-    border-radius: 0.5rem; /* I added border radius for modern button-like appearance */
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
 }
 
-/* I added this pseudo-element because it creates a smooth background reveal effect on hover */
 .nav a::before {
     content: '';
     position: absolute;
@@ -144,7 +126,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* I enhanced the hover state because it provides better visual feedback and modern interaction patterns */
 .nav a:hover {
     color: #f3f4f6;
     transform: translateY(-0.125rem);
@@ -154,53 +135,57 @@ body {
     transform: scaleY(1);
 }
 
-/* Trying to copy hero layout from design. Using flex to make image and text side-by-side */
 .hero {
-    display: grid; /* I changed from flex to grid because it provides better responsive control */
-    grid-template-columns: 1fr 1fr; /* I set equal columns for balanced layout */
-    gap: 4rem; /* I changed from margin to gap for cleaner spacing */
-    align-items: center;
-    padding: 4rem 0; /* I changed from margin-top to padding for better section spacing */
-    position: relative; /* I added this for layering context */
-    z-index: 5;
-}
-
-/* I added this media query because mobile screens need single column layout */
-@media (max-width: 48rem) {
-    .hero {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-}
-
-/* Limited text width so it doesn't stretch too far */
-.hero-text {
-    animation: slideInLeft 0.8s ease-out; /* I added entrance animation for better visual appeal */
-}
-
-/* This is the main headline. Lowered the font size slightly to make it less perfect */
-.hero-text h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem); /* I changed to clamp() because it provides responsive sizing between min and max values */
-    font-weight: bold;
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    padding: 4rem 0;
     color: #f3f4f6;
-    margin-bottom: 1.5rem; /* I changed from 12px to 1.5rem for consistency */
-    line-height: 1.2; /* I added this for better text spacing */
-    background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%); /* I added gradient text effect for modern appeal */
+}
+
+.hero-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-text {
+    flex: 1;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.hero-image {
+    flex: 1;
+    animation: slideInRight 0.8s ease-out;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.25rem;
+    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1),
+        0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
+    object-fit: cover;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: bold;
+    background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
-/* Just some intro text under the heading. Lighter color and smaller size */
 .hero-text p {
     color: #d1d5db;
-    margin-bottom: 2rem; /* I changed from 18px to 2rem for consistency */
-    font-size: 1.25rem; /* I added explicit size in rem for better scaling */
-    line-height: 1.8; /* I added this for better readability */
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.8;
 }
 
-/* I added this because the brand name should stand out with the blue color theme */
 .hero-text strong {
     background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
     -webkit-background-clip: text;
@@ -209,23 +194,20 @@ body {
     font-weight: 700;
 }
 
-/* CTA button. Tried blue like the mockup but maybe this shade is too bright */
 .hero-text button {
-    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%); /* I changed to gradient because it adds depth while keeping the blue theme */
+    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
     color: white;
     border: none;
-    padding: 1rem 2rem; /* I changed from 10px 20px to rem for consistency */
-    border-radius: 0.75rem; /* I changed from 4px to 0.75rem for more modern rounded corners */
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
     cursor: pointer;
-    font-size: 1.1rem; /* I added explicit font size in rem */
-    font-weight: 600; /* I added weight for better button hierarchy */
-    transition: all 0.3s ease; /* I added smooth transitions for interactions */
-    box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06); /* I added shadow in rem for depth */
-    position: relative; /* I added this for the shine effect */
-    overflow: hidden; /* I added this to contain the shine animation */
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* I added this shine effect because it creates an engaging interaction when users hover */
 .hero-text button::before {
     content: '';
     position: absolute;
@@ -237,10 +219,8 @@ body {
     transition: left 0.5s ease;
 }
 
-/* I enhanced the button hover because it provides satisfying feedback and encourages clicks */
 .hero-text button:hover {
     transform: translateY(-0.1875rem) scale(1.05);
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 }
 
@@ -248,112 +228,92 @@ body {
     left: 100%;
 }
 
-/* I added animation wrapper because entrance animations improve perceived performance */
-.hero-image {
-    animation: slideInRight 0.8s ease-out;
-    position: relative;
+@media (max-width: 768px) {
+    .hero-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .hero-text button {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 0.8rem 1.6rem;
+    }
 }
 
-/* Made image fixed size to match the mockup. Mb too small */
-.hero-image img {
-    width: 100%; /* I changed from 360px to 100% for responsive design */
-    height: 18.75rem; /* I changed from 180px to rem and increased size for better impact */
-    object-fit: cover;
-    border-radius: 1.25rem; /* I changed from 4px to 1.25rem for more modern rounded corners */
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05); /* I added shadow for depth */
-    transition: all 0.3s ease; /* I added smooth transitions */
-    position: relative; /* I added this for layering */
-    z-index: 2;
-}
-
-/* I added this background effect because it creates visual interest and depth behind the image */
-.hero-image::before {
-    content: '';
-    position: absolute;
-    top: 1.25rem;
-    left: 1.25rem;
-    right: -1.25rem;
-    bottom: -1.25rem;
-    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
-    border-radius: 1.25rem;
-    z-index: 1;
-    opacity: 0.3;
-    transition: all 0.3s ease;
-}
-
-/* I added these hover effects because they create engaging micro-interactions */
-.hero-image:hover::before {
-    transform: rotate(3deg);
-    opacity: 0.5;
-}
-
-.hero-image:hover img {
-    transform: translateY(-0.3125rem) rotate(-1deg);
-}
-
-/* I added this gradient background because it creates visual separation between sections */
-main {
-    background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
-}
-
-/* Info section below hero. Just centered and added some padding */
-.info {
-    padding: 6rem 0; /* I changed from 50px 20px to 6rem 0 for better section spacing */
-    text-align: center;
-    position: relative; /* I added this for the top accent line */
-}
-
-/* I added this accent line because it provides visual hierarchy and breaks up the content nicely */
-.info::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 6.25rem;
-    height: 0.25rem;
-    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
-    transform: translateX(-50%);
-    border-radius: 0.125rem;
-}
-
-/* I added explicit styling for the h2 because it needs proper hierarchy and responsive sizing */
 .info h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     color: #1f2937;
-    margin-bottom: 4rem;
-    position: relative;
 }
 
-/* Used flex again to make the cards line up. Added a small gap so they don't look too crammed */
 .cards {
-    display: grid; /* I changed from flex to grid because it provides better responsive control and equal heights */
-    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); /* I used minmax for responsive design */
-    gap: 2rem; /* I increased gap from 15px to 2rem for better breathing room */
-    margin-top: 3rem; /* I added margin for spacing from heading */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
-/* I added this media query because smaller screens need adjusted minimum width */
-@media (max-width: 48rem) {
+@media (max-width: 64rem) {
     .cards {
-        grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
 }
 
-/* Limiting the card size and keeping text small like in the screenshot */
-.card {
-    background: white; /* I added white background for card separation */
-    border-radius: 1rem; /* I changed to rem and increased for modern appearance */
-    padding: 2rem; /* I added padding for content spacing */
-    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06); /* I added subtle shadow */
-    transition: all 0.3s ease; /* I added smooth transitions */
-    position: relative; /* I added this for the top accent line */
-    overflow: hidden; /* I added this to contain effects */
-    border: 0.0625rem solid rgba(56, 130, 246, 0.1); /* I added subtle border with theme color */
+@media (max-width: 48rem) {
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .card img {
+        height: 9rem;
+        object-fit: cover;
+    }
 }
 
-/* I added this top accent line because it adds visual hierarchy and connects to the theme */
+.card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(56, 130, 246, 0.1);
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
 .card::before {
     content: '';
     position: absolute;
@@ -366,57 +326,42 @@ main {
     transition: transform 0.3s ease;
 }
 
-/* I added this hover effect because it creates engaging interaction and draws attention to content */
-.card:hover {
-    transform: translateY(-0.625rem);
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
-    border-color: rgba(56, 130, 246, 0.3);
-}
-
 .card:hover::before {
     transform: scaleX(1);
 }
 
-/* Border color picked randomly. Not sure if it matches exactly but it adds some structure */
 .card img {
     width: 100%;
-    height: 11.25rem; /* I changed from 120px to rem and increased for better visual impact */
-    object-fit: cover; /* I kept this for proper image scaling */
-    border-radius: 0.75rem; /* I changed to rem for consistency */
-    margin-bottom: 1.5rem; /* I changed from 8px to rem */
-    transition: all 0.3s ease; /* I added smooth transitions */
-    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06); /* I removed the blue border and added subtle shadow instead for cleaner look */
+    height: 11.25rem;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
 }
 
-/* I added this image hover effect because it creates engaging micro-interactions */
 .card:hover img {
     transform: scale(1.05);
-    box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06);
 }
 
-/* I added explicit styling for card text because it needs proper sizing and hierarchy */
 .card p {
     color: #1f2937;
+    font-size: 1rem;
     line-height: 1.6;
-    font-size: 1rem; /* I set explicit size in rem */
 }
 
-/* I added styling for emp tags because they should stand out with the theme color */
 .card emp {
     color: #3882f6;
     font-weight: 600;
     font-style: normal;
 }
 
-/* Wanted this section to look like a quote/testimonial. Light gray background to separate it */
 .quote {
-    background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%); /* I changed to gradient for visual interest while keeping the light gray theme */
-    padding: 6rem 0; /* I changed from 50px 20px to 6rem 0 for consistency */
-    position: relative; /* I added this for the decorative quote mark */
-    overflow: hidden; /* I added this to contain the quote mark */
+    background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%);
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
 }
 
-/* I added this large decorative quote mark because it's a common design pattern for testimonial sections */
 .quote::before {
     content: '"';
     position: absolute;
@@ -425,11 +370,9 @@ main {
     font-size: 8rem;
     color: rgba(56, 130, 246, 0.1);
     font-family: serif;
-    line-height: 1;
     z-index: 1;
 }
 
-/* I added this container because it provides better content width control and centering */
 .quote-container {
     max-width: 50rem;
     margin: 0 auto;
@@ -439,52 +382,45 @@ main {
     padding: 0 2rem;
 }
 
-/* Just made the quote a bit bigger to emphasize it */
 .quote-text {
-    font-size: clamp(1.5rem, 3vw, 2.25rem); /* I changed to clamp() for responsive sizing */
-    font-style: italic; /* I kept the italic style for quote appearance */
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-style: italic;
     color: #1f2937;
-    margin-bottom: 2rem; /* I changed from 10px to 2rem for better spacing */
-    line-height: 1.5; /* I added this for better readability */
-    position: relative;
+    margin-bottom: 2rem;
+    line-height: 1.5;
 }
 
-/* Aligned author name to the right. Not 100% sure if this is how it was in the mockup */
 .quote-author {
-    font-size: 1.25rem; /* I changed to rem and increased size slightly */
-    font-weight: 700; /* I changed from bold to 700 for consistency */
-    color: #3882f6; /* I changed to blue to connect with the theme */
-    position: relative;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #3882f6;
 }
 
-/* I added this dash before the author name because it's a common typography convention for attributions */
 .quote-author::before {
     content: '—';
     margin-right: 0.5rem;
 }
 
-/* I added this section wrapper because it provides proper spacing and background separation */
 .cta {
     padding: 6rem 0;
     background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
 }
 
-/* CTA (call to action) box toward the end. Tried to keep it visually strong so user notices it */
 .cta-box {
-    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%); /* I changed to gradient for visual depth */
+    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
     color: white;
-    padding: 3rem; /* I changed from 30px to 3rem for consistency */
-    border-radius: 1.25rem; /* I changed from 6px to 1.25rem for modern appearance */
+    padding: 3rem;
+    border-radius: 1.25rem;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* I added this for better vertical alignment */
-    gap: 2rem; /* I added gap instead of flex-wrap for cleaner spacing */
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05); /* I added shadow for depth */
-    position: relative; /* I added this for the animated background */
-    overflow: hidden; /* I added this to contain the animation */
+    align-items: center;
+    gap: 2rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 
-/* I added this animated background because it creates subtle movement that draws attention */
 .cta-box::before {
     content: '';
     position: absolute;
@@ -496,84 +432,81 @@ main {
     animation: rotate 20s linear infinite;
 }
 
-/* I added this media query because mobile needs vertical stacking */
-@media (max-width: 48rem) {
-    .cta-box {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* I added explicit styling for CTA heading because it needs proper hierarchy */
 .cta-text h3 {
     font-size: clamp(1.5rem, 3vw, 2rem);
     margin-bottom: 1rem;
     color: white;
 }
 
-/* I added explicit styling for CTA text because it needs proper contrast and readability */
 .cta-text p {
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
 }
 
-/* This button is white with blue text, opposite of the hero one. To create contrast */
 .cta-button {
     background: white;
     color: #3882f6;
-    padding: 1rem 2rem; /* I changed from 8px 16px to 1rem 2rem for better proportions */
+    padding: 1rem 2rem;
     border: none;
-    border-radius: 0.75rem; /* I changed from 4px to 0.75rem for consistency */
-    font-weight: 700; /* I changed from bold to 700 for consistency */
-    font-size: 1.1rem; /* I added explicit size */
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: all 0.3s ease; /* I added smooth transitions */
-    box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06); /* I added shadow */
-    position: relative; /* I added this for layering above animated background */
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    position: relative;
     z-index: 2;
-    white-space: nowrap; /* I added this to prevent text wrapping */
 }
 
-/* I enhanced the CTA button hover because it should encourage action */
 .cta-button:hover {
     transform: translateY(-0.1875rem) scale(1.05);
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
     background: #f8fafc;
 }
 
-/* Simple footer. Dark like header, small text */
-.footer {
-    background: linear-gradient(135deg, #1f2937 0%, #111827 100%); /* I changed to gradient to match header */
-    color: #e5e7eb;
-    text-align: center;
-    padding: 3rem 0; /* I changed from 20px to 3rem for better proportions */
-    position: relative; /* I added this for the top accent line */
+@media (max-width: 48rem) {
+    .cta-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        width: 90%;
+    }
+
+    .cta-button {
+        margin-top: 1.5rem;
+    }
 }
 
-/* I added this accent line because it provides visual separation and connects to the theme */
+.footer {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    color: #e5e7eb;
+    text-align: center;
+    padding: 3rem 0;
+    position: relative;
+}
+
 .footer::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 0.0625rem;
+    height: 1px;
     background: linear-gradient(90deg, transparent, #3882f6, transparent);
 }
 
-/* I kept the small text size but converted to rem */
 .footer p {
     font-size: 0.95rem;
-    opacity: 0.8; /* I added slight transparency for hierarchy */
+    opacity: 0.8;
 }
 
-/* I added these keyframe animations because they create engaging entrance effects */
 @keyframes slideInLeft {
     from {
         opacity: 0;
         transform: translateX(-3.125rem);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -585,6 +518,7 @@ main {
         opacity: 0;
         transform: translateX(3.125rem);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -595,6 +529,7 @@ main {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -605,96 +540,13 @@ main {
         opacity: 0;
         transform: translateY(1.875rem);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* I added staggered animations for cards because it creates a nice sequential reveal effect */
-.card {
-    animation: fadeInUp 0.6s ease-out;
-    animation-fill-mode: both;
-}
-
-.card:nth-child(1) { animation-delay: 0.1s; }
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.3s; }
-.card:nth-child(4) { animation-delay: 0.4s; }
-
-/* I added this mobile-specific media query because very small screens need additional adjustments */
-@media (max-width: 30rem) {
-    .hero-text h2 {
-        font-size: 2rem;
-    }
-    
-    .hero-text p {
-        font-size: 1.1rem;
-    }
-    
-    .cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .nav {
-        gap: 1rem;
-    }
-    
-    .nav a {
-        font-size: 1rem;
-        padding: 0.5rem;
-    }
-}
-
-/* I added these enhanced responsive improvements for better mobile experience */
-@media (max-width: 25rem) {
-    .container {
-        padding: 0 0.75rem;
-    }
-    
-    .hero {
-        padding: 2rem 0;
-        gap: 1.5rem;
-    }
-    
-    .info {
-        padding: 3rem 0;
-    }
-    
-    .card {
-        padding: 1.5rem;
-    }
-    
-    .cta-box {
-        padding: 2rem;
-        flex-direction: column;
-        text-align: center;
-        gap: 1.5rem;
-    }
-}
-
-/* I added smooth scrolling improvements for better user experience */
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
-    
-    .hero-text,
-    .hero-image,
-    .card {
-        will-change: transform;
-    }
-}
-
-/* I added focus-visible for better keyboard navigation */
-.nav a:focus-visible,
-button:focus-visible {
-    outline: 0.125rem solid #3882f6;
-    outline-offset: 0.25rem;
-    border-radius: 0.25rem;
-}
-
-/* I added this accessibility feature because users with motion sensitivity should have a comfortable experience */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -703,14 +555,12 @@ button:focus-visible {
     }
 }
 
-/* I added focus styles because keyboard navigation needs clear visual indicators */
 button:focus,
 a:focus {
     outline: 0.125rem solid #3882f6;
     outline-offset: 0.125rem;
 }
 
-/* I added custom scrollbar styling because it provides a more cohesive brand experience */
 ::-webkit-scrollbar {
     width: 0.5rem;
 }
@@ -728,13 +578,13 @@ a:focus {
     background: #2563eb;
 }
 
-/* Page-specific styles for new pages */
+/* New Page Styles - Hero Sections */
 .hero-section {
     background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-    padding: 4rem 0;
-    text-align: center;
+    padding: 6rem 0;
     position: relative;
     overflow: hidden;
+    color: #f3f4f6;
 }
 
 .hero-section::before {
@@ -744,56 +594,80 @@ a:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(56, 130, 246, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 70%, rgba(56, 130, 246, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
 .hero-content {
+    text-align: center;
     position: relative;
-    z-index: 2;
-    max-width: 50rem;
-    margin: 0 auto;
+    z-index: 10;
     animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-content h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    color: #f3f4f6;
+    background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
 .hero-content p {
-    font-size: 1.25rem;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
     color: #d1d5db;
+    max-width: 40rem;
+    margin: 0 auto;
     line-height: 1.6;
 }
 
-/* Features page styles */
+/* Features Grid */
 .features-grid {
     padding: 6rem 0;
-    background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
+}
+
+.features-grid h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.features-grid h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 0.25rem;
+    background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
+    border-radius: 0.125rem;
 }
 
 .features-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     margin-top: 3rem;
 }
 
 .feature-card {
     background: white;
     border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
+    padding: 2.5rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    border: 0.0625rem solid rgba(56, 130, 246, 0.1);
+    border: 1px solid rgba(56, 130, 246, 0.1);
     animation: fadeInUp 0.6s ease-out;
-    animation-fill-mode: both;
 }
 
 .feature-card:nth-child(1) { animation-delay: 0.1s; }
@@ -816,9 +690,9 @@ a:focus {
 }
 
 .feature-card:hover {
-    transform: translateY(-0.625rem);
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
-    border-color: rgba(56, 130, 246, 0.3);
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1);
+    border-color: #3882f6;
 }
 
 .feature-card:hover::before {
@@ -829,17 +703,25 @@ a:focus {
     width: 4rem;
     height: 4rem;
     background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.feature-icon svg {
     color: white;
     transition: all 0.3s ease;
 }
 
 .feature-card:hover .feature-icon {
     transform: scale(1.1) rotate(5deg);
+}
+
+.feature-card:hover .feature-icon svg {
+    transform: scale(1.1);
 }
 
 .feature-card h3 {
@@ -857,12 +739,11 @@ a:focus {
 
 .feature-list {
     list-style: none;
-    padding: 0;
 }
 
 .feature-list li {
-    color: #374151;
-    padding: 0.5rem 0;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
     position: relative;
     padding-left: 1.5rem;
 }
@@ -875,10 +756,10 @@ a:focus {
     font-weight: bold;
 }
 
-/* Pricing page styles */
+/* Pricing Grid */
 .pricing-grid {
     padding: 6rem 0;
-    background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
 }
 
 .pricing-container {
@@ -891,14 +772,13 @@ a:focus {
 .pricing-card {
     background: white;
     border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
+    padding: 2.5rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    border: 0.0625rem solid rgba(56, 130, 246, 0.1);
+    border: 1px solid rgba(56, 130, 246, 0.1);
     animation: fadeInUp 0.6s ease-out;
-    animation-fill-mode: both;
 }
 
 .pricing-card:nth-child(1) { animation-delay: 0.1s; }
@@ -906,8 +786,9 @@ a:focus {
 .pricing-card:nth-child(3) { animation-delay: 0.3s; }
 
 .pricing-card.featured {
-    border: 0.125rem solid #3882f6;
     transform: scale(1.05);
+    border-color: #3882f6;
+    box-shadow: 0 1.25rem 2.5rem rgba(56, 130, 246, 0.2);
 }
 
 .pricing-badge {
@@ -917,7 +798,7 @@ a:focus {
     background: linear-gradient(135deg, #3882f6 0%, #2563eb 100%);
     color: white;
     padding: 0.5rem 1rem;
-    border-radius: 1rem;
+    border-radius: 2rem;
     font-size: 0.875rem;
     font-weight: 600;
 }
@@ -928,7 +809,7 @@ a:focus {
 }
 
 .pricing-header h3 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: #1f2937;
     margin-bottom: 1rem;
@@ -943,14 +824,15 @@ a:focus {
 
 .currency {
     font-size: 1.5rem;
+    font-weight: 600;
     color: #6b7280;
-    margin-right: 0.25rem;
 }
 
 .amount {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
     color: #1f2937;
+    line-height: 1;
 }
 
 .period {
@@ -961,21 +843,19 @@ a:focus {
 
 .pricing-header p {
     color: #6b7280;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .pricing-features {
     list-style: none;
-    padding: 0;
     margin-bottom: 2rem;
 }
 
 .pricing-features li {
-    color: #374151;
-    padding: 0.75rem 0;
+    color: #4b5563;
+    margin-bottom: 0.75rem;
     position: relative;
     padding-left: 1.5rem;
-    border-bottom: 0.0625rem solid #f3f4f6;
 }
 
 .pricing-features li::before {
@@ -992,9 +872,9 @@ a:focus {
     color: white;
     border: none;
     padding: 1rem 2rem;
-    border-radius: 0.75rem;
-    font-size: 1.1rem;
+    border-radius: 0.5rem;
     font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -1013,8 +893,8 @@ a:focus {
 }
 
 .pricing-button:hover {
-    transform: translateY(-0.1875rem);
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.5rem 1rem rgba(56, 130, 246, 0.3);
 }
 
 .pricing-button:hover::before {
@@ -1022,20 +902,17 @@ a:focus {
 }
 
 .pricing-button.featured {
-    background: white;
-    color: #3882f6;
-    border: 0.125rem solid #3882f6;
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
 }
 
 .pricing-button.featured:hover {
-    background: #3882f6;
-    color: white;
+    box-shadow: 0 0.5rem 1rem rgba(5, 150, 105, 0.3);
 }
 
-/* Contact page styles */
+/* Contact Grid */
 .contact-grid {
     padding: 6rem 0;
-    background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
 }
 
 .contact-container {
@@ -1047,7 +924,7 @@ a:focus {
 
 .contact-info h2,
 .contact-form h2 {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 700;
     color: #1f2937;
     margin-bottom: 2rem;
@@ -1066,13 +943,13 @@ a:focus {
     padding: 1.5rem;
     background: white;
     border-radius: 0.75rem;
-    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
 
 .contact-method:hover {
     transform: translateY(-0.25rem);
-    box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .contact-icon {
@@ -1083,8 +960,12 @@ a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.contact-icon svg {
+    color: white;
     transition: all 0.3s ease;
 }
 
@@ -1102,14 +983,24 @@ a:focus {
 .contact-details p {
     color: #6b7280;
     line-height: 1.5;
-    margin-bottom: 0.25rem;
 }
 
+.contact-details a {
+    color: #3882f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #2563eb;
+}
+
+/* Form Styles */
 .form {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 1rem;
-    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
 }
 
 .form-group {
@@ -1119,7 +1010,7 @@ a:focus {
 .form-group label {
     display: block;
     font-weight: 600;
-    color: #374151;
+    color: #1f2937;
     margin-bottom: 0.5rem;
 }
 
@@ -1127,8 +1018,8 @@ a:focus {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 0.75rem;
-    border: 0.0625rem solid #d1d5db;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e5e7eb;
     border-radius: 0.5rem;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -1140,7 +1031,7 @@ a:focus {
 .form-group textarea:focus {
     outline: none;
     border-color: #3882f6;
-    box-shadow: 0 0 0 0.1875rem rgba(56, 130, 246, 0.1);
+    box-shadow: 0 0 0 0.125rem rgba(56, 130, 246, 0.1);
 }
 
 .submit-button {
@@ -1149,9 +1040,9 @@ a:focus {
     color: white;
     border: none;
     padding: 1rem 2rem;
-    border-radius: 0.75rem;
-    font-size: 1.1rem;
+    border-radius: 0.5rem;
     font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -1170,18 +1061,26 @@ a:focus {
 }
 
 .submit-button:hover {
-    transform: translateY(-0.1875rem);
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.5rem 1rem rgba(56, 130, 246, 0.3);
 }
 
 .submit-button:hover::before {
     left: 100%;
 }
 
-/* FAQ section styles */
+/* FAQ Section */
 .faq-section {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%);
+    background: white;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 4rem;
 }
 
 .faq-container {
@@ -1192,13 +1091,12 @@ a:focus {
 }
 
 .faq-item {
-    background: white;
-    border-radius: 1rem;
+    background: #f9fafb;
+    border-radius: 0.75rem;
     padding: 2rem;
-    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
     animation: fadeInUp 0.6s ease-out;
-    animation-fill-mode: both;
 }
 
 .faq-item:nth-child(1) { animation-delay: 0.1s; }
@@ -1207,8 +1105,9 @@ a:focus {
 .faq-item:nth-child(4) { animation-delay: 0.4s; }
 
 .faq-item:hover {
-    transform: translateY(-0.375rem);
-    box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06);
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border-color: #3882f6;
 }
 
 .faq-item h3 {
@@ -1223,30 +1122,96 @@ a:focus {
     line-height: 1.6;
 }
 
-/* CTA section styles */
+/* Social Section */
+.social-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    color: white;
+}
+
+.social-section h2 {
+    text-align: center;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+    background: rgba(56, 130, 246, 0.2);
+    border-color: #3882f6;
+    transform: translateY(-0.25rem);
+}
+
+.social-link svg {
+    transition: all 0.3s ease;
+}
+
+.social-link:hover svg {
+    transform: scale(1.1);
+}
+
+/* CTA Section for New Pages */
 .cta-section {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(56, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .cta-content {
     text-align: center;
-    max-width: 50rem;
-    margin: 0 auto;
+    position: relative;
+    z-index: 10;
 }
 
 .cta-content h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #f3f4f6 0%, #d1d5db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
 }
 
 .cta-content p {
-    font-size: 1.25rem;
-    color: #6b7280;
-    margin-bottom: 2rem;
-    line-height: 1.6;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: #d1d5db;
+    margin-bottom: 2.5rem;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cta-buttons {
@@ -1259,14 +1224,16 @@ a:focus {
 .primary-button,
 .secondary-button {
     padding: 1rem 2rem;
-    border-radius: 0.75rem;
-    font-size: 1.1rem;
+    border-radius: 0.5rem;
     font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: none;
     position: relative;
     overflow: hidden;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .primary-button {
@@ -1274,14 +1241,7 @@ a:focus {
     color: white;
 }
 
-.secondary-button {
-    background: white;
-    color: #3882f6;
-    border: 0.125rem solid #3882f6;
-}
-
-.primary-button::before,
-.secondary-button::before {
+.primary-button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1292,35 +1252,62 @@ a:focus {
     transition: left 0.5s ease;
 }
 
-.primary-button:hover,
-.secondary-button:hover {
-    transform: translateY(-0.1875rem);
-    box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
+.primary-button:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.5rem 1rem rgba(56, 130, 246, 0.3);
 }
 
-.primary-button:hover::before,
+.primary-button:hover::before {
+    left: 100%;
+}
+
+.secondary-button {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.secondary-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.secondary-button:hover {
+    background: white;
+    color: #3882f6;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.2);
+}
+
 .secondary-button:hover::before {
     left: 100%;
 }
 
-.secondary-button:hover {
-    background: #3882f6;
-    color: white;
-}
-
-/* Responsive design for new pages */
+/* Responsive Design for New Pages */
 @media (max-width: 48rem) {
-    .contact-container {
+    .features-container {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
     
     .pricing-container {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .pricing-card.featured {
         transform: none;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
     
     .faq-container {
@@ -1337,19 +1324,42 @@ a:focus {
         width: 100%;
         max-width: 20rem;
     }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-link {
+        width: 100%;
+        max-width: 15rem;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 30rem) {
-    .features-container {
-        grid-template-columns: 1fr;
+    .hero-section {
+        padding: 4rem 0;
+    }
+    
+    .features-grid,
+    .pricing-grid,
+    .contact-grid,
+    .faq-section,
+    .cta-section {
+        padding: 4rem 0;
+    }
+    
+    .feature-card,
+    .pricing-card {
+        padding: 2rem;
+    }
+    
+    .form {
+        padding: 2rem;
     }
     
     .contact-method {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .contact-icon {
-        align-self: center;
+        padding: 1rem;
     }
 }
