@@ -22,6 +22,11 @@ html {
     scroll-behavior: smooth;
 }
 
+header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
 body {
     font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: #f9fafb;
@@ -32,16 +37,70 @@ body {
 }
 
 .container {
-    max-width: 75rem;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-@media (max-width: 48rem) {
-    .container {
-        padding: 0 1rem;
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Desktop/tablet default */
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+@media (max-width: 47.99rem) {
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    .nav a {
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .card {
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
     }
 }
+
+
+
+
+
 
 .header {
     background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
@@ -261,6 +320,10 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
 
 @media (max-width: 64rem) {
@@ -296,6 +359,9 @@ body {
     overflow: hidden;
     animation: fadeInUp 0.6s ease-out;
     animation-fill-mode: both;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
 }
 
 .card:nth-child(1) {
@@ -670,12 +736,29 @@ a:focus {
     animation: fadeInUp 0.6s ease-out;
 }
 
-.feature-card:nth-child(1) { animation-delay: 0.1s; }
-.feature-card:nth-child(2) { animation-delay: 0.2s; }
-.feature-card:nth-child(3) { animation-delay: 0.3s; }
-.feature-card:nth-child(4) { animation-delay: 0.4s; }
-.feature-card:nth-child(5) { animation-delay: 0.5s; }
-.feature-card:nth-child(6) { animation-delay: 0.6s; }
+.feature-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.feature-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.feature-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.feature-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
 
 .feature-card::before {
     content: '';
@@ -781,9 +864,17 @@ a:focus {
     animation: fadeInUp 0.6s ease-out;
 }
 
-.pricing-card:nth-child(1) { animation-delay: 0.1s; }
-.pricing-card:nth-child(2) { animation-delay: 0.2s; }
-.pricing-card:nth-child(3) { animation-delay: 0.3s; }
+.pricing-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.pricing-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.pricing-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
 
 .pricing-card.featured {
     transform: scale(1.05);
@@ -1099,10 +1190,21 @@ a:focus {
     animation: fadeInUp 0.6s ease-out;
 }
 
-.faq-item:nth-child(1) { animation-delay: 0.1s; }
-.faq-item:nth-child(2) { animation-delay: 0.2s; }
-.faq-item:nth-child(3) { animation-delay: 0.3s; }
-.faq-item:nth-child(4) { animation-delay: 0.4s; }
+.faq-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.faq-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.faq-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.faq-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
 
 .faq-item:hover {
     transform: translateY(-0.25rem);
@@ -1295,41 +1397,41 @@ a:focus {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .pricing-container {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .pricing-card.featured {
         transform: none;
     }
-    
+
     .contact-container {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
+
     .faq-container {
         grid-template-columns: 1fr;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .primary-button,
     .secondary-button {
         width: 100%;
         max-width: 20rem;
     }
-    
+
     .social-links {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .social-link {
         width: 100%;
         max-width: 15rem;
@@ -1341,7 +1443,7 @@ a:focus {
     .hero-section {
         padding: 4rem 0;
     }
-    
+
     .features-grid,
     .pricing-grid,
     .contact-grid,
@@ -1349,17 +1451,41 @@ a:focus {
     .cta-section {
         padding: 4rem 0;
     }
-    
+
     .feature-card,
     .pricing-card {
         padding: 2rem;
     }
-    
+
     .form {
         padding: 2rem;
     }
-    
+
     .contact-method {
         padding: 1rem;
     }
+}
+
+.back-to-top {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.back-to-top a {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background-color: #1f2937;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.back-to-top a:hover,
+.back-to-top a:focus {
+    background-color: #2563eb;
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
 }
