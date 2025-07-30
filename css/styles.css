@@ -693,6 +693,19 @@ a:focus {
 }
 
 /* Features Grid */
+
+@media (max-width: 64rem) {
+    .features-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 48rem) {
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 .features-grid {
     padding: 6rem 0;
     background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
@@ -721,10 +734,11 @@ a:focus {
 
 .features-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
     margin-top: 3rem;
 }
+
 
 .feature-card {
     background: white;
